@@ -65,7 +65,7 @@
 							</article>
 
 						<!-- Contact -->
-							<article id="contact" onsubmit="Send(); reset(); return false;">
+							<article id="contact">
 								<h2 class="major">Contact</h2>
 								<form method="post" action="#" onsubmit="Send(); return false;">
 									<div class="fields">
@@ -351,7 +351,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 	       				var email = document.getElementById('email').value;
 	        			var message = document.getElementById('message').value;
 	
-	        			var body = "Email: " + email + "\nName: " + name + "\nMessage: " + message;
+	        			var body = "<b>Email:</b> " + email + "<br><b>Name:</b> " + name + "<br><b>Message:</b> " + message;
 					
 					Email.send({
 						    Host : "smtp.elasticemail.com",
