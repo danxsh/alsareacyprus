@@ -346,14 +346,21 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script>
 				function Send() {
    					console.log("Sending email...");
+					
+					var name = document.getElementById('name').value;
+	       				var email = document.getElementById('email').value;
+	        			var message = document.getElementById('message').value;
+	
+	        			var body = "Email: " + email + "\nName: " + name + "\nMessage: " + message;
+					
 					Email.send({
 						    Host : "smtp.elasticemail.com",
    					 	    Username : "info@alsareacyprus.com",
    						    Password : "751FEF8CE85715FD3D27524F2972D8C472D2",
 					        To: 'd89055910@gmail.com',
 					        From: "info@alsareacyprus.com",
-					        Subject: "This is the subject",
-					        Body: "And this is the body"
+					        Subject : "New contact, you have a new message from a visitor",
+					 	Body : body
 					    }).then(
 					        message => alert(message)
 					    );
