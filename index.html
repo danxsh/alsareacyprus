@@ -423,6 +423,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 				<!-- Footer -->
 					<footer id="footer">
+						<p class="time" id="working-time"><span id="live-time"></span></p>
 						<p class="copyright">&copy; 2016-2024 AL SAREA TRADING AND CONTRACTING LTD. All Rights Reserved. <br> Designed By <a href="https://www.linktr.ee/daneshllc" target="_blank">DaneshLLC</a> : Dimension By <a href="https://html5up.net/" target="_blank">HTML5 UP</a> </p>
 
 			</div>
@@ -465,6 +466,31 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
     }
   );
 }	</script>
+						<script>
+
+
+    function updateLiveTime() {
+        var now = new Date();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var seconds = now.getSeconds();
+
+        // Pad single digit minutes and seconds with leading zero
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+
+        var currentTime = hours + ':' + minutes + ':' + seconds;
+
+        // Update the content of the live-time span
+        document.getElementById('live-time').textContent = currentTime;
+    }
+
+    // Update live time every second
+    setInterval(updateLiveTime, 1000);
+
+    // Call the function once to initially display the time
+    updateLiveTime();
+</script>
 
 
 	</body>
